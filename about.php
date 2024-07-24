@@ -12,12 +12,13 @@
 		<h1>TechVista Innovations Ltd.</h1>
 		<nav>
 			<ul>
-				<li><a href="/">Home</a></li>
+				<li><a href="/techvista">Home</a></li>
 				<li><a href="/techvista/about.php">About Us</a></li>
 				<li><a href="/techvista/services.php">Services</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Login</a></li>
+				<li><a href="/techvista/portfolio.php">Portfolio</a></li>
+				<li><a href="/techvista/contact.php">Contact</a></li>
+				<li><a href="/techvista/faq.php">FAQ</a></li>
+				<li><a href="/techvista/client-login.php">Login</a></li>
 			</ul>
 		</nav>
 	</div>
