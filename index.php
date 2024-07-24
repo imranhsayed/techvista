@@ -12,9 +12,9 @@
 		<h1>TechVista Innovations Ltd.</h1>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Services</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/techvista/about.php">About Us</a></li>
+				<li><a href="/techvista/services.php">Services</a></li>
 				<li><a href="#">Portfolio</a></li>
 				<li><a href="#">Contact</a></li>
 				<li><a href="#">Login</a></li>
