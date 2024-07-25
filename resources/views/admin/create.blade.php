@@ -8,7 +8,7 @@
 		<div class="card col-8">
 
 			<div class="card-body">
-				<form action="{{ route('TrainStore') }}" method="POST" class="form" enctype="multipart/form-data" novalidate>
+				<form action="{{ route('InquiryStore') }}" method="POST" class="form" enctype="multipart/form-data" novalidate>
 					@csrf
 					<div class="form-group">
 						<p><label for="name">Name</label><br />

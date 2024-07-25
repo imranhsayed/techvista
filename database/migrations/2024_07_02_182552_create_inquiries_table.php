@@ -11,17 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trains', function (Blueprint $table) {
+        Schema::create('inquiries', function (Blueprint $table) {
             $table->id();
 			$table->string( 'name' );
-	        $table->string( 'image' );
-	        $table->string( 'short_description' );
-	        $table->string( 'description' );
-
-			// Add 3 more fields based on trains.
-	        $table->string( 'started_on' );
-	        $table->string( 'cost' );
-	        $table->string( 'speed' );
+	        $table->string( 'email' );
+	        $table->string( 'phone' );
+	        $table->string( 'message' );
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trains');
+        Schema::dropIfExists('inquiries');
     }
 };

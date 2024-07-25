@@ -9,7 +9,7 @@
 
 			<div class="card-body">
 
-				<form action="{{ route('TrainUpdate', ['id' => $post->id]) }}"
+				<form action="{{ route('InquiryUpdate', ['id' => $post->id]) }}"
 				      method="post" class="form" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')

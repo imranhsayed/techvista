@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTrainRequest;
-use App\Http\Requests\UpdateTrainRequest;
-use App\Models\Train;
+use App\Http\Requests\StoreInquiryRequest;
+use App\Http\Requests\UpdateInquiryRequest;
+use App\Models\Inquiry;
 
-class TrainController extends Controller
+class InquiryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $trains = Train::all();
-		$title = "Lab 2 - Trains";
+        $inquiries = Inquiry::all();
+		$title = "Lab 2 - Inquirys";
 
-		return view( 'trains.index', compact( 'title', 'trains' ) );
+		return view( 'inquiries.index', compact( 'title', 'inquiries' ) );
     }
 
     /**
@@ -30,7 +30,7 @@ class TrainController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTrainRequest $request)
+    public function store(StoreInquiryRequest $request)
     {
         //
     }
@@ -40,15 +40,15 @@ class TrainController extends Controller
      */
     public function show(string $id)
     {
-        $train = Train::find( $id );
-	    $title = $train->name;
-	    return view( 'trains.show', compact( 'title', 'train' ) );
+        $inquiry = Inquiry::find( $id );
+	    $title = $inquiry->name;
+	    return view( 'inquiries.show', compact( 'title', 'train' ) );
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Train $train)
+    public function edit(Inquiry $inquiry)
     {
         //
     }
@@ -56,7 +56,7 @@ class TrainController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTrainRequest $request, Train $train)
+    public function update(UpdateInquiryRequest $request, Inquiry $inquiry)
     {
         //
     }
@@ -64,7 +64,7 @@ class TrainController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Train $train)
+    public function destroy(Inquiry $inquiry)
     {
         //
     }

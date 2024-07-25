@@ -5,11 +5,11 @@
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header text-center">Trains</div>
+					<div class="card-header text-center">Inquirys</div>
 
 					<div class="card-body">
 						{{--Create Tran Link--}}
-						<a href="{{ route('TrainCreate') }}" class="btn btn-success mb-3">Create Train</a>
+						<a href="{{ route('InquiryCreate') }}" class="btn btn-success mb-3">Create Inquiry</a>
 
 						{{-- Search Form --}}
 						<form action="{{ route('list') }}" method="GET" class="form-inline mb-3">
@@ -17,7 +17,7 @@
 							<button style="margin-top: 16px;" type="submit" class="btn btn-primary">Search</button>
 						</form>
 
-						{{--List Trains--}}
+						{{--List Inquirys--}}
 						<table class="table table-striped">
 							<thead>
 							<tr>
@@ -30,22 +30,22 @@
 							</tr>
 							</thead>
 							<tbody>
-							@foreach( $trains as $train )
+							@foreach( $inquiries as $inquiry )
 								<tr>
 									<td>
-										<img class="train_thumb" width="100" height="50" src="/images/{{ $train->image }}"
-										     alt="{{ $train->name }}">
+										<img class="train_thumb" width="100" height="50" src="/images/{{ $inquiry->image }}"
+										     alt="{{ $inquiry->name }}">
 									</td>
 									<td>
-										{{ $train->name }}
+										{{ $inquiry->name }}
 									</td>
-									<td>{{ $train->short_description }}</td>
-									<td>{{ $train->started_on }}</td>
+									<td>{{ $inquiry->short_description }}</td>
+									<td>{{ $inquiry->started_on }}</td>
 									<td>
-										<a href="{{ route('TrainEdit', ['id' => $train->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+										<a href="{{ route('InquiryEdit', ['id' => $inquiry->id]) }}" class="btn btn-primary btn-sm">Edit</a>
 									</td>
 									<td>
-										<form action="{{ route('TrainDelete', ['id' => $train->id]) }}" method="POST">
+										<form action="{{ route('InquiryDelete', ['id' => $inquiry->id]) }}" method="POST">
 											@csrf
 											@method('DELETE')
 											<button type="submit" class="btn btn-danger btn-sm">Delete</button>
