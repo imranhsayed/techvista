@@ -1,0 +1,9 @@
+/* resources/css/app.css */
+
+/* Import Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Custom Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+}
