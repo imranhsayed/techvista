@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>How to Get Started - TechVista Innovations Ltd.</title>
-	<link rel="stylesheet" href="css/get-started.css">
-</head>
-<body>
-<header>
-	<div class="container">
-		<h1>TechVista Innovations Ltd.</h1>
-		<nav>
-			<ul>
-				<li><a href="/techvista">Home</a></li>
-				<li><a href="/techvista/about.php">About Us</a></li>
-				<li><a href="/techvista/services.php">Services</a></li>
-				<li><a href="/techvista/portfolio.php">Portfolio</a></li>
-				<li><a href="/techvista/contact.php">Contact</a></li>
-				<li><a href="/techvista/faq.php">FAQ</a></li>
-				<li><a href="/techvista/client-login.php">Login</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
+@extends('layouts.app')
 
-<main>
+@section('content')
 	<section id="get-started">
 		<div class="container">
 			<h2>How to Get Started</h2>
@@ -54,12 +30,4 @@
 			<p>If you're ready to start, <a href="contact.php">contact us</a> today and let's turn your ideas into reality!</p>
 		</div>
 	</section>
-</main>
-
-<footer>
-	<div class="container">
-		<p>&copy; 2024 TechVista Innovations Ltd. All Rights Reserved.</p>
-	</div>
-</footer>
-</body>
-</html>
+@endsection
