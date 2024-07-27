@@ -1,10 +1,9 @@
-
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
+<section id="faq" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
         <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -79,6 +78,6 @@
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 @endsection
