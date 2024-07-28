@@ -14,7 +14,7 @@ class InquiryController extends Controller
     public function index()
     {
         $inquiries = Inquiry::all();
-		$title = "Lab 2 - Inquirys";
+		$title = "TechVista";
 
 		return view( 'inquiries.index', compact( 'title', 'inquiries' ) );
     }

@@ -1,219 +1,293 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
 .container {
-	width: 80%;
-	margin: 0 auto;
-	overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 main {
-	padding: 20px 0;
+    padding: 40px 0;
 }
 
-#company-background, #team-overview {
-	padding: 20px 0;
+section {
+    padding: 60px 0;
 }
 
-#company-background h2, #team-overview h2 {
-	color: #333;
-	text-align: center;
+.bg-light {
+    background-color: #f8f9fa !important;
 }
 
-#company-background p, #team-overview p {
-	text-align: center;
-	max-width: 700px;
-	margin: 0 auto;
+.bg-secondary {
+    background-color: #e9ecef !important;
+}
+
+.text-primary {
+    color: #0779e4 !important;
+}
+
+.text-secondary {
+    color: #666 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-header {
+    background-color: #0779e4;
+    color: #fff;
+}
+
+.card-title {
+    margin-bottom: 20px;
+}
+
+.card-text {
+    color: #666;
+}
+
+.list-group-item {
+    text-align: left;
+}
+
+.btn-primary {
+    background-color: #0779e4;
+    border-color: #0779e4;
+}
+
+.btn-primary:hover {
+    background-color: #055fb5;
+    border-color: #055fb5;
+}
+
+.navbar-brand, .nav-link {
+    color: #333 !important;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #0779e4 !important;
+}
+
+.alert {
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main {
+    padding: 40px 0;
+}
+
+#company-background, #team-overview, #faq, #get-started, #project-showcase, #client-testimonials, #technologies-used, #software-development, #contract-handling {
+    padding: 60px 0;
+}
+
+#company-background, #software-development, #contract-handling {
+    background-color: #f8f9fa;
+}
+
+#client-testimonials, #technologies-used {
+    background-color: #e9ecef;
+}
+
+#company-background h2, #team-overview h2, #faq h2, #get-started h2, #project-showcase h2, #client-testimonials h2, #technologies-used h2, #software-development h2, #contract-handling h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#company-background p, #team-overview p, #get-started p, #software-development p, #contract-handling p, #contract-handling ul, #project-showcase .project p, #client-testimonials .testimonial p, #technologies-used ul li {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
 }
 
 #team-overview .team-member {
-	text-align: center;
-	margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 #team-overview .team-member img {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
-
-#faq {
-	padding: 20px 0;
+#faq .accordion .card-header {
+    background-color: #0779e4;
 }
 
-#faq h2 {
-	color: #333;
-	text-align: center;
-	margin-bottom: 20px;
+#faq .accordion .card-header h2 button {
+    text-align: left;
+    width: 100%;
+    font-size: 1.25rem;
+    color: #fff;
 }
 
-#faq .faq-item {
-	margin-bottom: 20px;
-}
-
-#faq h3 {
-	color: #0779e4;
-}
-
-#get-started {
-	padding: 20px 0;
-}
-
-#get-started h2 {
-	color: #333;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-#get-started p {
-	text-align: center;
-	margin-bottom: 20px;
+#faq .accordion .card-body {
+    text-align: left;
 }
 
 #get-started ol {
-	max-width: 800px;
-	margin: 0 auto;
-	padding-left: 20px;
-	list-style-type: decimal;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    list-style-type: decimal;
+    text-align: left;
 }
 
 #get-started li {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-#get-started h3 {
-	color: #0779e4;
+#get-started h3, #faq h3, #project-showcase .project h3, #software-development .service h3 {
+    color: #0779e4;
 }
 
-#get-started a {
-	color: #0779e4;
-	text-decoration: none;
+#get-started a, #get-started a:hover {
+    color: #0779e4;
+    text-decoration: none;
 }
 
 #get-started a:hover {
-	text-decoration: underline;
-}
-
-
-#project-showcase, #client-testimonials, #technologies-used {
-	padding: 20px 0;
-}
-
-#project-showcase h2, #client-testimonials h2, #technologies-used h2 {
-	color: #333;
-	text-align: center;
-	margin-bottom: 20px;
+    text-decoration: underline;
 }
 
 #project-showcase .gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #project-showcase .project {
-	width: 30%;
-	margin-bottom: 20px;
-	background: #f4f4f4;
-	padding: 15px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-	text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 #project-showcase .project img {
-	width: 100%;
-	height: auto;
-	border-radius: 5px;
-}
-
-#project-showcase .project h3 {
-	margin-top: 10px;
-	color: #333;
-}
-
-#project-showcase .project p {
-	color: #666;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 #client-testimonials .testimonials {
-	max-width: 700px;
-	margin: 0 auto;
-	text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #client-testimonials .testimonial {
-	margin-bottom: 20px;
-	padding: 15px;
-	border-left: 5px solid #0779e4;
-	background: #f9f9f9;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#client-testimonials .testimonial p {
-	color: #666;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 5px solid #0779e4;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #technologies-used ul {
-	max-width: 700px;
-	margin: 0 auto;
-	padding-left: 20px;
-	text-align: left;
-	list-style-type: disc;
-}
-
-
-#software-development, #contract-handling {
-	padding: 20px 0;
-}
-
-#software-development h2, #contract-handling h2 {
-	color: #333;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-#software-development p, #contract-handling p, #contract-handling ul {
-	max-width: 700px;
-	margin: 0 auto;
-	text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+    text-align: left;
+    list-style-type: disc;
 }
 
 #software-development .services-list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #software-development .service {
-	width: 45%;
-	margin-bottom: 20px;
-	background: #f4f4f4;
-	padding: 15px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#software-development .service h3 {
-	color: #333;
-	margin-bottom: 10px;
-}
-
-#software-development .service p {
-	color: #666;
+    width: 45%;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 #contract-handling ul {
-	text-align: left;
-	list-style-type: disc;
-	margin: 0;
-	padding-left: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+    text-align: left;
+    list-style-type: disc;
 }
+
+.card-body {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #0779e4;
+    border-color: #0779e4;
+}
+
+.btn-primary:hover {
+    background-color: #055fb5;
+    border-color: #055fb5;
+}
+
+.navbar-brand, .nav-link {
+    color: #333 !important;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #0779e4 !important;
+}
+
+.alert {
+    margin: 20px 0;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+}
+
+/* portfolio list items design*/
+
+.box {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 0.25rem; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); 
+}
+

@@ -6,95 +6,111 @@ use App\Http\Controllers\Controller;
 use App\Models\Inquiry;
 use Illuminate\Http\Request;
 
-class InquiryController extends Controller {
-	/**
-	 * Display a listing of the resource.
-	 */
-	public function index( Request $request ) {
-		$title = "Inquiries!";
+class InquiryController extends Controller
+{
+    public function index(Request $request)
+    {
+        $title = "Inquiries!";
+        $inquiries = Inquiry::all(); 
 
-		return view( 'admin/index', compact( 'title' ) );
-	}
+        return view('admin.index', compact('title', 'inquiries'));
+    }
 
-	/**
-	 * Show the form for creating a new train.
-	 */
-	public function create() {
-		$title = "Create Inquiry";
+    public function create()
+    {
+        $title = "Create Inquiry";
 
-		return view( 'admin/create', compact( 'title' ) );
-	}
+        return view('admin.create', compact('title'));
+    }
 
-	/**
-	 * Store a newly created train in storage.
-	 */
-	public function store( Request $request ) {
-		$request->validate( [
-			'name'    => 'required',
-			'email'   => 'required',
-			'phone'   => 'required',
-			'message' => 'required',
-		] );
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s]*$/'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['required', 'regex:/^\+?[0-9]{7,15}$/'],
+            'message' => ['required', 'string', 'max:2000', 'regex:/^[\w\s\.,!?\-]*$/'],
+        ]);
 
-		$inquiry          = new Inquiry();
-		$inquiry->name    = $request->name;
-		$inquiry->email   = $request->email;
-		$inquiry->phone   = $request->phone;
-		$inquiry->message = $request->message;
+        Inquiry::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'message' => $request->message,
+        ]);
 
-		$inquiry->save();
+        session()->flash('success', 'Inquiry created successfully!');
+        return redirect()->route('thank-you');
+    }
 
-		// Set the flash message
-		session()->flash( 'success', 'Inquiry created successfully!' );
+    public function edit($id)
+    {
+        $post = Inquiry::find($id);
+        $title = "Edit Post";
 
-		return redirect()->route( 'thank-you' );
-	}
+        return view('admin.edit', compact('post', 'title'));
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 */
-	public function edit( string $id ) {
-		$post  = Inquiry::find( $id );
-		$title = "Edit Post";
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+        ]);
 
-		return view( 'admin/edit', compact( 'post', 'title' ) );
-	}
+        $inquiry = Inquiry::findOrFail($id);
+        $inquiry->name = $request->name;
+        $inquiry->email = $request->email;
+        $inquiry->phone = $request->phone;
+        $inquiry->message = $request->message;
 
-	/**
-	 * Update the specified resource in storage.
-	 */
-	public function update( Request $request, $id ) {
-		$request->validate( [
-			'name'    => 'required',
-			'email'   => 'required',
-			'phone'   => 'required',
-			'message' => 'required',
-		] );
+        $inquiry->save();
 
-		$inquiry          = Inquiry::findOrFail( $id );
-		$inquiry->name    = $request->name;
-		$inquiry->email   = $request->email;
-		$inquiry->phone   = $request->phone;
-		$inquiry->message = $request->message;
+        session()->flash('success', 'Inquiry updated successfully!');
+        return redirect()->route('admin.inquiries.index')->with('success', 'Inquiry updated successfully!');
 
-		$inquiry->save();
+    }
 
-		// Set the flash message
-		session()->flash( 'success', 'Inquiry updated successfully!' );
+    public function destroy($id)
+    {
+        $inquiry = Inquiry::findOrFail($id);
+        $inquiry->delete();
 
-		return redirect()->route( 'list' );
-	}
+        session()->flash('success', 'Inquiry deleted successfully!');
 
-	/**
-	 * Remove the specified resource from storage.
-	 */
-	public function destroy( string $id ) {
-		$inquiry = Inquiry::findOrFail( $id );
-		$inquiry->delete();
+        //return redirect()->route('list');
+        return redirect()->route('admin.inquiries.index')->with('success', 'Inquiry updated successfully!');
+    }
 
-		// Set the flash message
-		session()->flash( 'success', 'Inquiry deleted successfully!' );
+    public function updateStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|string',
+        ]);
 
-		return redirect()->route( 'list' );
-	}
+        $inquiry = Inquiry::findOrFail($id);
+        $inquiry->status = $request->status;
+        $inquiry->save();
+
+        session()->flash('success', 'Status updated successfully!');
+        //return redirect()->route('list');
+        return redirect()->route('admin.inquiries.index')->with('success', 'Inquiry updated successfully!');
+    }
+
+    public function updateNotes(Request $request, $id)
+    {
+        $request->validate([
+            'notes' => 'nullable|string|max:2000',
+        ]);
+
+        $inquiry = Inquiry::findOrFail($id);
+        $inquiry->notes = $request->notes;
+        $inquiry->save();
+
+        session()->flash('success', 'Notes updated successfully!');
+        //return redirect()->route('list');
+        return redirect()->route('admin.inquiries.index')->with('success', 'Inquiry updated successfully!');
+    }
 }
